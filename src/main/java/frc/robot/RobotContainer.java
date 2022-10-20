@@ -5,7 +5,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -24,8 +23,6 @@ public class RobotContainer {
   
   private final Drive m_driveSubsystem = new Drive();
 
-  private final Joystick m_driverJoystick = new Joystick(Constants.kDriverJoystickPort);
-
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -33,7 +30,7 @@ public class RobotContainer {
 
     m_driveSubsystem.setDefaultCommand(
       new RunCommand(
-        () -> {m_driveSubsystem.arcadeDrive(m_driverJoystick.getRawAxis(Constants.leftStick_Y) * 0.6, m_driverJoystick.getRawAxis(Constants.rightStick_X) * 0.7);}
+        () -> {CommandScheduler.getInstance().schedule(new DriveForAndBack(m_driveSubsystem));}
         , m_driveSubsystem)
     );
   }
