@@ -1,5 +1,5 @@
 # BasketballCar
-The code of Mingdao High School 53th anniversery school fair FRC basketball car,thanks for downloading this program.
+The code of Mingdao High School 53th anniversery school fair FRC basketball car,thanks for downloading this program.(PS.download the branch "master")
 
 Below are the controlling tips:
 
@@ -31,3 +31,7 @@ Button X--start/stop the burst mode when the auto front-and-back mode is started
 Button Y--start/stop the burst mode when the controlling mode is started, only affective in controlling mode, initially set false
 
 Have fun!
+
+#籃球機器人
+
+
